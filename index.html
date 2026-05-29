@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scavenger Hunt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            background: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,.1);
+        }
+
+        .treasure-image {
+            width: 200px;
+            max-width: 80%;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 12px;
+            width: 80%;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin-top: 15px;
+            border: none;
+            background: #0078ff;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #005ed1;
+        }
+
+        .clue {
+            display: none;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Treasure_chest_icon.svg/512px-Treasure_chest_icon.svg.png"
+        alt="Treasure Chest"
+        class="treasure-image">
+
+    <h1>🔍 Scavenger Hunt</h1>
+
+    <p>
+        Congratulations!!! <br>
+        Thanks for your smart thinking and hard work, you found the secret code<br>
+        that was lost in the wind. Now you need to open the Treasure Chest!<br><br>
+
+        Here is the clue to find it:<br>
+        <strong>"I bake cookies, cakes and pies, look nearby for your next surprise."</strong>
+    </p>
+
+    <input type="password" id="password" placeholder="Enter password">
+
+    <br>
+
+    <button onclick="checkPassword()">Unlock Clue</button>
+
+    <div id="error" class="error"></div>
+
+    <div id="clue" class="clue">
+        🎉 Great job!
+
+        <p>
+            Look where cold things stay all day,<br>
+            your next clue is tucked away.
+        </p>
+    </div>
+
+</div>
+
+<script>
+function checkPassword() {
+
+    const password = document.getElementById("password").value;
+
+    if(password.toLowerCase() === "2846") {
+        document.getElementById("clue").style.display = "block";
+        document.getElementById("error").innerHTML = "";
+    } else {
+        document.getElementById("error").innerHTML = "Wrong password. Try again!";
+    }
+}
+</script>
+
+</body>
+</html>
